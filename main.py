@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import MeCab as MeeeeeeeCABBBBB
+import jaconv
 
 class GenerateRiaLang:
 
@@ -14,16 +15,22 @@ class GenerateRiaLang:
         for line in lines:
             feature = line.split('\t')
             if len(feature) == 2: #'EOS'と''を省く
-                thepart = feature[1].split(',')[0]
+                thepart = feature[1].split(',')
+        
+        print(thepart)
 
-        if thepart == '名詞':
+        if thepart[0] == '名詞':
             print('名詞りあだね。')
             return self.noun(text)
-        elif thepart == '動詞':
-            print('動詞りあだね。')
-            return self.verb(text)
+        elif thepart[0] == '動詞':
+            if thepart[1] == '非自立':
+                print('非自立語りあだね。')
+                return self.verb(text.replace(jaconv.kata2hira(thepart[7]),''))
+            else:
+                print('動詞りあだね。')
+                return self.verb(text)
         else:
-            print(thepart+'りあだね。')
+            print(thepart[0]+'りあだね。')
             return (text + 'りあ')
     
     def noun(self, noun_text):
