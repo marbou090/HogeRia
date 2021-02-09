@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 import MeCab as MeeeeeeeCABBBBB
 import jaconv
-import pandas as pd
 import csv
 
 
