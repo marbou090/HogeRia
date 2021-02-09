@@ -43,6 +43,8 @@ class GenerateRiaLang:
         return noun_text
     
     def verb(self, verb_text):
+        if verb_text[-1] in ['ら','り','る','れ','ろ']:
+            verb_text = verb_text[:-1]
         verb_text = verb_text + 'りあ'
         return verb_text
 
