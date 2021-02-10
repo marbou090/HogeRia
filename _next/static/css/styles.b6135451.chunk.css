@@ -145,7 +145,7 @@ form {
     align-items: center; }
   .body-page-transition #page-transition > div:after {
     content: "";
-    background-image: url(/NextSam/_next/static/images/bg7-b08234a2b7e8e4fb2e3c4e713252021c.jpg);
+    background-image: url(/HogeRia/_next/static/images/bg7-b08234a2b7e8e4fb2e3c4e713252021c.jpg);
     background-size: cover;
     position: fixed;
     z-index: 9998;
